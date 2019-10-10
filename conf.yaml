@@ -1,0 +1,42 @@
+#data_index: /scratch_net/bmicdl01/Dat/camcan_train.hdf5
+train_set_name: camcan_train_set
+val_set_name: camcan_val_set
+log_dir: ../logs
+batch_size: 64
+init_batches: 64
+spatial_size: 128
+box_factor: 0
+bottleneck_factor: 0
+z_dim: 2888
+
+lr: 5.0e-4
+lr_decay_begin: 100000
+lr_decay_end: 100000
+log_freq: 250
+ckpt_freq: 1000
+test_freq: 1000
+drop_prob: 0.1
+
+feature_layers: [
+    "input_1",
+    "block1_conv2",
+    "block2_conv2",
+    "block3_conv4",
+    "block4_conv4",
+    "block5_conv4"]
+
+feature_weights: [
+   1.0,
+   0.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0]
+
+gram_weights: [
+   0.0,
+   0.,
+   0.,
+   0.,
+   0.,
+   0.]
